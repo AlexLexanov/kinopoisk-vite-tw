@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #1f1f1f;
+    overflow-x: hidden;
+}
+
+@layer utilities {
+    @variants responsive {
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .flex-center {
+            @apply flex justify-center items-center;
+        }
+    }
+}
+
+:root {
+    --item-size: 5;
+    --item-scale: scale(1.1);
+    --main-items-padding: 2.24rem;
+    --main-padding: 1rem;
+    --visible-items-size: calc(var(--item-size) - 1);
+    --item-width: calc((100% - var(--main-padding) * 2 - var(--main-items-padding) * var(--visible-items-size)) / var(--item-size));
+    --film-height: calc((100vw - var(--main-padding) * 2 - var(--main-items-padding) * var(--visible-items-size)) / var(--item-size) * 9 / 16);
+    --genres-height: calc((100vw - var(--main-padding) * 2 - var(--main-items-padding) * var(--visible-items-size)) / var(--item-size) * 9 / 12);
+}
+@media screen and (max-width: 1440px) {
+    :root {
+        --main-items-padding: 1.62rem;
+    }
+}
+@media screen and (max-width: 1366px) {
+    :root {
+        --main-items-padding: 1.62rem;
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "testFiles": "**/*.spec.js",
+  "componentFolder": "src",
+  "pluginsFile": false,
+  "supportFile": false,
+  "video": false
+}
